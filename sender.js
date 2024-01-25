@@ -3,7 +3,7 @@ const amqp = require('amqplib');
 const sendMessage = async (obj) => {
   const connection = await amqp.connect('amqp://localhost');
   const channel = await connection.createChannel();
-  const exchangeName = 'exampleExchange';
+  const exchangeName = 'demoExchange';
 
   await channel.assertExchange(exchangeName, 'fanout', { durable: false });
 
